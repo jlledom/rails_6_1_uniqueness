@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_25_124441) do
+ActiveRecord::Schema.define(version: 2023_04_25_124835) do
 
   create_table "coaches", force: :cascade do |t|
     t.string "name"
     t.integer "team_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["team_id"], name: "index_coaches_on_team_id"
+    t.index ["team_id"], name: "index_coaches_on_team_id", unique: true
   end
 
   create_table "players", force: :cascade do |t|
